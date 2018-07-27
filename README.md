@@ -1,3 +1,14 @@
+====this app wrote in python 2.7====
+
+preparation environment:
+    virtualenv -p python venv
+    source venv/bin/activate
+    pip install -r requirements
+
+run app
+    chmod +x ./app.py
+    ./app
+
 get all tasks
 
     curl -u admin:todopass -i http://localhost:5000/todo/api/v1.0/tasks

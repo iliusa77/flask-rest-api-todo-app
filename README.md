@@ -6,6 +6,11 @@ preparation environment:
     virtualenv -p python venv
     source venv/bin/activate
     pip install -r requirements
+    
+setup credentials:
+
+    export TODOUSER='admin'
+    export TODOPASS='todopass'
 
 run app
 

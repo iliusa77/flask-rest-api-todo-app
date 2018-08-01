@@ -1,5 +1,6 @@
 #!venv/bin/python
 
+import os
 from flask import Flask, jsonify
 from flask import abort
 from flask import make_response
@@ -28,8 +29,8 @@ tasks = [
 
 @auth.get_password
 def get_password(username):
-    if username == 'admin':
-        return 'todopass'
+    if username == os.environ.get('TODOUSER'):
+        return os.environ.get('TODOPASS')
     return None
 
 @auth.error_handler

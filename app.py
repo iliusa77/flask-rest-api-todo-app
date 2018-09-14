@@ -112,7 +112,7 @@ def make_public_task(task):
             new_task[field] = task[field]
     return new_task
 
-def sonartest():
+def sonartest2():
     pass
 
 if __name__ == '__main__':

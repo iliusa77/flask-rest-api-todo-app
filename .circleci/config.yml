@@ -59,7 +59,7 @@ jobs:
           name: run tests
           command: |
             #curl -i -u admin:todopass http://localhost:5000/todo/api/v1.0/tasks
-            docker inspect --format '{{ .NetworkSettings.IPAddress }}' $(docker ps -q)
+            docker exec -i -t $(docker ps -l -q) env | grep ADDR
 
       - store_artifacts:
           path: test-reports

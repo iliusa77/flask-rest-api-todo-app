@@ -58,7 +58,8 @@ jobs:
       - run:
           name: run tests
           command: |
-            curl -i -u admin:todopass http://localhost:5000/todo/api/v1.0/tasks
+            #curl -i -u admin:todopass http://localhost:5000/todo/api/v1.0/tasks
+            ifconfig
 
       - store_artifacts:
           path: test-reports

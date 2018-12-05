@@ -49,11 +49,16 @@ jobs:
       # https://pytest.org
       # https://nose.readthedocs.io
       - run:
-          name: run tests
+          name: run app
           command: |
             . venv/bin/activate
             chmod +x ./app.py
             ./app.py &
+            
+      - run:
+          name: run tests
+          command: |
+            curl -i -u admin:todopass http://localhost:5000/todo/api/v1.0/tasks
 
       - store_artifacts:
           path: test-reports

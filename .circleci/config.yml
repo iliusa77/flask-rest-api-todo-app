@@ -59,8 +59,7 @@ jobs:
           name: run tests
           command: |
             #curl -i -u admin:todopass http://localhost:5000/todo/api/v1.0/tasks
-            ifconfig
-            sudo netstat -tulpn | grep 5000
+            docker inspect --format '{{ .NetworkSettings.IPAddress }}' $(docker ps -q)
 
       - store_artifacts:
           path: test-reports
